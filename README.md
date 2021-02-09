@@ -3,7 +3,6 @@
 
 <h3>Featuring a Pomodoro clock with customizable inputs, ToDo list and a Spotify/SoundCloud player for different genres. Full local storage support. No log-in. No data stored </h3>
 <br><br>
-Laptop Preview: <br>
 <img src="/other/preview.png" />
 
 Mobile and Desktop versions coming soon.
