@@ -1,0 +1,93 @@
+.container  {
+    align-items: left;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .toggle {
+    align-items: right!important;
+    justify-content: right;
+  }
+  .title {
+    font-family: 'Poppins', sans-serif;
+    margin: 10px;
+  }
+  .body {
+    font-family: 'Poppins', sans-serif;
+  }
+  @import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f5f7fa;
+	
+	display: flex;
+	flex-direction: column;
+	
+	transition: all ease-in-out 0.3s;
+	margin: 0;
+}
+
+body.dark-theme {
+	background-color: #333;
+}
+
+.text-container {
+	max-width: 600px;
+	text-align: center;
+}
+
+h2 {
+	margin-bottom: 0;
+}
+
+
+p {
+	letter-spacing: 1px;
+}
+
+body.dark-theme h3, body.dark-theme h4 {
+	color: #ddd;
+}
+
+.toggle input[type=checkbox] {
+	display: none;
+}
+
+.toggle label {
+	background-color: #777;
+	border: 2px solid #555;
+	border-radius: 50px;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: all ease-in-out 0.3s;
+	width: 70px;
+	height: 35px;
+}
+
+.toggle label::after {
+	background-color: #555;
+	border-radius: 50%;
+	content: ' ';
+	cursor: pointer;
+	display: inline-block;
+	position: absolute;
+	left: 2px;
+	top: 1px;
+	transition: all ease-in-out 0.3s;
+	width: 30px;
+	height: 30px;
+}
+
+.toggle input[type=checkbox]:checked ~ label {
+	background-color: #00a0fc;
+	border-color: #006dc9;
+}
+
+.toggle input[type=checkbox]:checked ~ label::after {
+	background-color: #0054B0;
+	transform: translateX(35px);
+}

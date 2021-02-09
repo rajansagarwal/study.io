@@ -1,0 +1,169 @@
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'poppins', sans-serif;
+}
+.pomodoro {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  margin-left: 25%;
+}
+.pomodoro input {
+  transition: 0.5s ease-in-out;
+  margin: 10px 0;
+  font-size: 18px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.788);
+  border: 1px solid;
+  border-radius: 10px;
+  
+}
+.pomodoro .btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  margin-top: 0px;
+}
+.pomodoro button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  font-size: 18px;
+  transition: none;
+  border-radius: 15px;
+}
+.pomodoro label {
+  font-size: 12px;
+}
+.pomodoro form {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  max-width: 370px;
+  margin: 5px auto;
+}
+.pomodoro form button {
+  background: rgb(25, 67, 255);
+  width: 100%;
+  margin: 5px 0;
+  color: white;
+}
+.pomodoro .start {
+  background:none;
+  border: 2px solid;
+  color: black;
+  border-radius: 15px;
+}
+.pomodoro .break {
+  background: rgb(87, 128, 110);
+  color: #ffffff;
+}
+.pomodoro .reset {
+  background: rgb(68, 56, 121);
+  color: #ffffff;
+  border-radius: 15px;
+}
+.pomodoro .pause {
+  background: rgb(131, 80, 25);
+  border-radius: 15px;
+  color: #ffffff;
+}
+.pomodoro .resume {
+  background: rgb(131, 10, 252);
+  color: white;
+  border-radius: 15px;
+}
+.pomodoro .clock {
+  padding: 2px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  height: 30%;
+  font-size: 24px;
+  margin-top: -400px;
+}
+.pomodoro .progress-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pomodoro .progress-ring__circle {
+  transition: 0.5s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke: rgb(51, 65, 255);
+}
+
+.pomodoro .danger {
+  stroke: rgb(243, 17, 28);
+  animation: pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: rotate(-90deg) scale(1);
+  }
+  50% {
+    transform: rotate(-90deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(-90deg) scale(0.8);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pomodoro  {
+    display: grid;
+    grid-template-areas:
+      "head head"
+      "clock form"
+      "btns ji";
+  }
+  .pomodoro .btn-group {
+    grid-area: btns;
+    justify-content: center;
+  }
+ .pomodoro  .clock {
+    grid-area: clock;
+    height: 100%;
+  }
+ .pomodoro  h1 {
+    grid-area: head;
+
+    align-self: center;
+  }
+.pomodoro   form {
+    align-self: center;
+    justify-self: center;
+    grid-area: form;
+    width: 50%;
+    justify-content: space-around;
+  }
+ .pomodoro  footer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+ .pomodoro  form {
+    height: 40%;
+  }
+ .pomodoro  footer {
+    position: static;
+  }
+}

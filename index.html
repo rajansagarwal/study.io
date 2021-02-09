@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>concentrate.io</title>
+	<meta charset="UTF-8" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./src/main/main.css">
+	<link rel="stylesheet" href="./src/pomodoro/pomodoro.css">
+	<link rel="stylesheet" href="./src/todo/todo.css">
+	<link rel="stylesheet" href="./src/main/preloader.css">
+	<link rel="stylesheet" href="./src/main/main.css">
+</head>
+
+<body>
+ <div class="preloader">
+  <img height="125%" width"auto">
+</div>
+<script>
+  const preloader = document.querySelector('.preloader');
+
+const fadeEffect = setInterval(() => {
+  // if we don't set opacity 1 in CSS, then   //it will be equaled to "", that's why we   // check it
+  if (!preloader.style.opacity) {
+    preloader.style.opacity = 1;
+  }
+  if (preloader.style.opacity > 0) {
+    preloader.style.opacity -= 0.1;
+  } else {
+    clearInterval(fadeEffect);
+  }
+}, 200);
+
+window.addEventListener('load', fadeEffect);
+</script>
+<style>
+  *, *::after, *::before {
+  box-sizing: border-box;
+}
+
+
+.preloader {
+  display: flex;
+   background: rgb(23, 22, 22);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: rgb(23, 22, 22);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: opacity 0.3s linear;
+}
+
+.page-content {
+  max-width: 768px;
+  margin: 0 auto;
+}
+  </style>
+		<script>
+			$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+
+		</script>
+	<header>
+		<h3 class="title">concentrate.io</h3>
+		<!--<div class="toggle">
+	<input type="checkbox" id="toggle" />
+	<label for="toggle"></label>
+</div>
+  </header>
+  <script type="text/javascript">
+  const toggle = document.getElementById('toggle');
+const body = document.body;
+
+toggle.addEventListener('input', (e) => {
+	const isChecked = e.target.checked;
+	
+	if(isChecked) {
+		body.classList.add('dark-theme');
+	} else {
+		body.classList.remove('dark-theme');
+	}
+});
+</script>-->
+<div class="laptop">
+ 
+		<style>
+			.box {
+				color: #fff;
+				padding: 50px;
+				display: none;
+				margin-top: 10px;
+			}
+
+			.red {
+				background: #ff0000;
+			}
+
+			.green {
+				background: #228B22;
+			}
+
+			.blue {
+				background: #0000ff;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js">
+		</script>
+
+		</head>
+
+		<body>
+			<div class="musicdropdown">
+
+				<style>
+					.box {
+						color: #fff;
+						padding: 50px;
+						display: none;
+						margin-top: 10px;
+					}
+
+					.red {
+						background: #ff0000;
+					}
+
+					.green {
+						background: #228B22;
+					}
+
+					.blue {
+						background: #0000ff;
+					}
+				</style>
+				<script src="https://code.jquery.com/jquery-1.12.4.min.js">
+				</script>
+
+				</head>
+				<style>
+					.dropdown {
+						height: 30px;
+						width: 60px;
+						color: blue;
+						margin-left: 8%;
+						margin-top: 7%;
+					}
+				</style>
+
+				<body>
+					<div class="dropdown">
+						<select>
+            <option value="chill">Chill</option>
+            <option value="lofi">LoFI Hip Hop</option>
+            <option value="relaxed">Relaxed</option>
+                   <option value="chill">LoFI Hip Hop</option>
+            <option value="jazz">Jazz</option>
+            <option value="classical">Classical</option>
+        </select>
+    </div>
+    <div class="chill box""><iframe src="https://open.spotify.com/embed/playlist/471N195f5jAVs086lzYglw" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 18px;"></iframe></iframe></div>
+    <div class="lofi box""><iframe src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM" width="300" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 18px;"></iframe></div>
+    <div class="relaxed box"><iframe src="https://open.spotify.com/embed/playlist/4kJ7DiiFxWUPpVTNA7D5Hw" width="300" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 18px;"></iframe></div>
+    <div class="jazz box"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3SiCzCxMDOH" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"style="border-radius: 18px;"></iframe></div>
+    <div class="classical box"><iframe src="https://open.spotify.com/embed/playlist/6wObnEPQ63a4kei1sEcMdH" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 18px;"></iframe></div>
+<h6 style="margin-top: -3%; margin-left: 4%;">Don't have Spotify? Want different music? <a href="https://note.rajnagrwl.repl.co/alternate.html">Click here</a></h6>
+<script>
+  $(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+    </div>
+  
+
+		<!-- POMODORO CLOCK -->
+		<div class="container">
+			<div class="pomodoro" style="margin-top: -20%;">
+				<!--    <h1></h1> -->
+
+				<figure class="clock">
+					<div class="mins">0</div>
+					<div>:</div>
+					<div class="secs">00</div>
+					<svg class="progress-ring" height="120" width="120">
+						<circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="50" cx="60" cy="60" />
+					</svg>
+				</figure>
+
+				<div class="btn-group">
+					<button class="start">Begin</button>
+      <button class="reset">End</button>
+      <button class="pause">Pause</button>
+    </div>
+<div class="input">
+    <form action=".">
+      <label for="focusTime">Focus Time</label>
+      <input type="number" value="1" id="focusTime" />
+      <label for="breakTime">Break Time</label>
+      <input type="number" value="1" id="breakTime" />
+      <button type="submit">Save</button>
+    </form>
+  </div>
+
+    <script src="./src/pomodoro/adjust.js"></script>
+    <script src="./src/pomodoro/pomodoro.js"></script>
+    <script src="./src/pomodoro/focus.js"></script>
+    </div>
+    </div>
+
+  <div class="container">
+    <div class="todo">
+   <input type="text" class="addTxt" placeholder="Task..." /> <button class="addBtn" onclick="addElement()"> <img src="https://www.freeiconspng.com/thumbs/add-icon-png/add-1-icon--flatastic-1-iconset--custom-icon-design-0.png" /> </button> <div class="list"></div> <script src="assets/index.js"></script> </div> 
+    </div>
+    </div>
+    <script src="./src/todo/todo.js"></script>
+    </div>
+    <div class="comingsoon">
+      <h1 style=" text-align: center; padding: 10%; padding-bottom: 2%;">🚧 Mobile and Desktop Versions of this application are under construction 🚧</h1>
+      <h4 style=" text-align: center;">To get the full concentrate.io experience, <strong>please use a laptop</strong></h4>
+      </div>
+</body>
+<style>
+  @media (max-width: 1000px){
+    .laptop {
+      display: none;
+    }
+}
+@media   (min-width: 2000px){
+    .laptop {
+      display: none;
+    }
+
+  }
+@media (min-width: 1000px) and (max-width: 2000px) {
+  .comingsoon {
+    display: none;
+  }
+}
+
+  </style>
+</html>
