@@ -5,6 +5,4 @@
 <br>
 <img src="/other/preview.png" />
 
-Mobile and Desktop versions coming soon.
-
-Built with HTML CSS and Vanilla JS
+Contact me to learn more.
