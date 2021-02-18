@@ -10,18 +10,183 @@
   <link rel="stylesheet" href="./src/main/main.css">
   <link rel="stylesheet" href="./src/pomodoro/pomodoro.css">
   <link rel="stylesheet" href="./src/todo/todo.css">
+    <link rel="stylesheet" href="./src/main/dark.css">
   <link rel="stylesheet" href="./src/main/preloader.css">
   <link rel="shortcut icon" type="image/png" href="/src/favicon.png" />
 </head>
 
-<body>
+<body id="body" class="dark-mode everything">
+   
+  <div id="loader-wrapper">
+  <div id="loader"></div>
+  <div class="loader-section section-left"></div>
+  <div class="loader-section section-right"></div>
+</div>
+<!--  Page Content goes here  -->
+
+<style>
+  #loader-wrapper {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:1000;
+}
+#loader {
+  display:block;
+  position: relative;
+  top:50%;
+  left:50%;
+  width:150px;
+  height:150px;
+  margin:-75px 0 0 -75px;
+  border:3px solid transparent;
+  border-top-color:white;
+  border-radius:100%;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+  z-index:1001;
+}
+#loader:before {
+  content:"";
+  position: absolute;
+  top:5px;
+  left:5px;
+  right:5px;
+  bottom:5px;
+  border:3px solid transparent;
+  border-top-color: yellow;
+  border-radius:100%;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
+}
+#loader:after {
+  content:"";
+  position: absolute;
+  top:12px;
+  left:12px;
+  right:12px;
+  bottom:12px;
+  border:3px solid transparent;
+  border-top-color:orange;
+  border-radius:100%;
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+  0%   { 
+    -webkit-transform: rotate(0deg); 
+      -ms-transform: rotate(0deg); 
+          transform: rotate(0deg);
+  }
+  100% { 
+    -webkit-transform: rotate(360deg); 
+      -ms-transform: rotate(360deg); 
+          transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0%   { 
+    -webkit-transform: rotate(0deg); 
+      -ms-transform: rotate(0deg); 
+          transform: rotate(0deg);
+  }
+  100% { 
+    -webkit-transform: rotate(360deg); 
+      -ms-transform: rotate(360deg); 
+          transform: rotate(360deg);
+  }
+}
+
+#loader-wrapper .loader-section {
+  position:fixed;
+  top:0;
+  background:#333;
+  width:51%;
+  height:100%;
+  z-index:1000;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left:0
+}
+#loader-wrapper .loader-section.section-right {
+  right:0;
+}
+
+/* Loaded Styles */
+.loaded #loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+}
+.loaded #loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645,0.045,0.355,1.000);
+}
+.loaded #loader {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+  visibility: hidden;
+  transform:translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+</style>
+<script>
+  //For Live Projects
+window.addEventListener('load',function(){
+  document.querySelector('body').classList.add("loaded")  
+});
+
+</script>
 
 
   <header>
-    <h3 class="title">study.io <span style="font-size: 75%; color: red">beta</span></h3>
+    <h3 class="title">study.io </h3>
+    <div class="darkmode title">
+<button type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button></div>
+</header>
+
+  <style>
+    body.dark-mode {
+	 background-color: #eee;
+	 color: #111;
+}
+ body.dark-mode a {
+	 color: #eee;
+}
+ body.dark-mode .darkmode button {
+	 background-color: #111;
+	 color: #eee;
+height: 25px;
+width: 25px;
+
+}
+ body.light-mode {
+	 background-color: #111;
+	 color: #eee;
+}
+ body.light-mode a {
+	 color: #eee;
+}
+ body.light-mode .darkmode button {
+	 background-color: #eee;
+	 color: #eee;
+ height: 25px;
+width: 25px;
+}
+ </style>
+ <script>function toggleDarkLight() {
+  var body = document.getElementById("body");
+  var currentClass = body.className;
+  body.className = currentClass == "light-mode" ? "dark-mode" : "light-mode";
+}</script>
 
     <div class="laptop">
-
+   
+  
       <style>
         .box {
           color: #fff;
@@ -105,7 +270,7 @@
           <div class="rap box""><iframe src=" https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd" width="368" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
           <div class="lo-fi box""><iframe name=" spotify" src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM" width="368" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 18px;"></iframe></div>
           <div class="relaxed box"><iframe src="https://open.spotify.com/embed/playlist/6ZywW2c5wJtXQmHXthjDkC" width="368" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 18px"></iframe></div>
-          <div class="jazz box"><iframe name="spotify" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3SiCzCxMDOH" width="368" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 18px;"></iframe></div>
+          <div class="jazz box"><iframe src="https://open.spotify.com/embed/playlist/7jHEx7oHxN4B7PKCLapcq9" width="368" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 18px"></iframe></div>
           <iframe class="podcast box" height="560" width="460" src="https://www.youtube.com/embed/q3ZjCW8UT5g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="border: 1px solid; border-radius: 15px" allowfullscreen></iframe>
           <div class="classical box"><iframe name="spotify" src="https://open.spotify.com/embed/playlist/6wObnEPQ63a4kei1sEcMdH" width="368" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 18px;"></iframe></div>
         </div>
@@ -137,12 +302,30 @@
         <div class="pomodoro" class="column" style="margin-top: -340px;">
           <!--    <h1></h1> -->
 
+<style>
+  @media screen and (min-width: 1700px) {
+    .pomodoro {
+      margin-left: 30%;
+    }
+    .todo {
+      margin-right: 12%;
+    }
+    .music {
+      margin-left: 15%;
+    }
+    .dropdown {
+      margin-left: 7%;
+    }
 
+}
+
+
+  </style>
 
           <figure class="clock">
-            <div class="mins">0</div>
-            <div>:</div>
-            <div class="secs">00</div>
+            <div class="mins" style="font-size: 115%">0</div>
+            <div style="font-size: 115%">:</div>
+            <div class="secs" style="font-size: 115%">00</div>
             <audio src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"></audio>
             <svg class="progress-ring" height="120" width="120">
               <circle class="progress-ring__circle" stroke-width="8" fill="transparent" r="50" cx="60" cy="60" />
@@ -181,12 +364,13 @@
     </div>
     <script src="./src/todo/todo.js"></script>
     </div>
-    <div class="comingsoon">
-      <h1 style=" text-align: center; padding: 10%; padding-bottom: 2%;">You can view the Pomodoro Feature here</h1>
-      <h4 style=" text-align: center;">To get the full study.io experience, <strong>please use a laptop</strong></h4>
+    <div class="mobile">
+      <h1 style=" text-align: center; padding: 10%; padding-bottom: 2%;">This application is only available on laptops and desktops</h1>
+      <h1 style=" text-align: center; padding: 10%; padding-bottom: 2%;">To get the full experience, please use a larger screen</h1>
+      <h3 style=" text-align: center; padding: 10%;">We do this to promote individuals to not use their phones during studying</h3>
     </div>
     <footer>
-      <h6>© Made with ❤️ by <a href="https://www.github.com/itsrajan">Rajan Agarwal</a></h6>
+      <h6>© Made with ❤️ by <a href="https://www.github.com/itsrajan" style="color: #3944bc">Rajan Agarwal</a></h6>
     </footer>
 </body>
 <style>
@@ -198,7 +382,7 @@
   }
 
   @media screen and (max-width: 600px) {
-    .column {
+    .container {
       width: 100%;
     }
   }
@@ -222,25 +406,19 @@
   }
 
   body {
-    overflow-y: hidden;
+overflow-y: hidden;
   }
 
   @media (max-width: 1000px) {
-    .laptop {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .comingsoon {
-      display: none;
-    }
-
-    .pomodoro {
-      display: inheret;
-
-    }
+  .laptop {
+    display: none;
   }
+  
 
+    .mobile {
+      display: inheret;
+  }
+}
   @media (min-width: 2000px) {
 
     .comingsoon {
