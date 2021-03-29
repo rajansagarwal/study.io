@@ -5,4 +5,4 @@
 <br>
 <img src="/other/preview.png" />
 
-Contact me to learn more.
+Nothing too serious. Making it much more user-friendly soon.
