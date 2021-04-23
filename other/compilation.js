@@ -8,7 +8,7 @@ window.onload = function() {
 };
 
 function addElement() {
-    if (document.querySelector(".addTxt").value.trim() != "") {
+    if (document.querySelector(".addTxt").value.trim() != "") { 
         elements.push(document.querySelector(".addTxt").value.trim());
         if (localStorage.getItem("elements") == null) {
             localStorage.setItem("elements", JSON.stringify(elements));
